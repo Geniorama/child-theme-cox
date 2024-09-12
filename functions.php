@@ -43,3 +43,6 @@ require('inc/tax/tax-country.php');
 
 // ACF
 require('inc/acf/acf-project-settings.php');
+
+// Shortcodes
+require('inc/shortcodes/sc-show-project-info.php');
