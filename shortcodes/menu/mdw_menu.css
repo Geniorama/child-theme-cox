@@ -1,0 +1,51 @@
+.mdw__megamenu_header {
+  width: 28vw;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  border-bottom: solid 1px #777;
+}
+
+.mdw__menu_level {
+  list-style: none;
+  background-color: #fff;
+  padding: 0;
+  width: 28vw;
+  height: 100vh;
+}
+
+.mdw__menu_level .mdw__menu_item {
+  padding: 20px;
+  border-bottom: 1px solid #777;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mdw__menu_level > .mdw__menu_item > .mdw__menu_level {
+  position: absolute;
+  left: 28vw;
+  top: 0px;
+  background-color: #EAEBF5;
+  padding-top: 79.26px;
+}
+
+.mdw__menu_level > .mdw__menu_item > .mdw__menu_level > .mdw__menu_item > .mdw__menu_level {
+  background-color: #283198;
+}
+
+.mdw__menu_level .mdw__menu_item a {
+  color: #283198;
+  font-family: "Red Hat Display", Sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.mdw__menu_level .mdw__menu_item:hover > a {
+  font-weight: bold;
+}
+
+.mdw__menu_level > .mdw__menu_item > .mdw__menu_level > .mdw__menu_item > .mdw__menu_level .mdw__menu_item a {
+  color: #FFF;
+}
