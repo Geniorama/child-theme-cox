@@ -46,6 +46,6 @@ require('inc/tax/tax-country.php');
 require('inc/acf/acf-project-settings.php');
 
 // Shortcodes
-require('shortcodes/sc-show-project-info.php');
+require('shortcodes/projects/sc-show-project-info.php');
 
 require 'shortcodes/menu/mdw_menu.php'; // Menu
