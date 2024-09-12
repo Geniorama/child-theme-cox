@@ -37,3 +37,9 @@ add_action( 'wp_enqueue_scripts', 'hello_elementor_child_scripts_styles', 20 );
 
 // Custom CPTS
 require('inc/cpt/cpt-projects.php');
+
+// Custom Taxonomies
+require('inc/tax/tax-country.php');
+
+// ACF
+require('inc/acf/acf-project-settings.php');

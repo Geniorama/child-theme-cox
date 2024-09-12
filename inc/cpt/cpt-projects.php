@@ -45,7 +45,7 @@ function cox_projects_function() {
         'description'           => __( 'Post Type Description', 'web_cox' ),
         'labels'                => $labels,
         'supports'              => array( 'title', 'editor', 'thumbnail' ),
-        'taxonomies'            => array( 'category', 'post_tag' ),
+        'taxonomies'            => array( 'post_tag' ),
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
