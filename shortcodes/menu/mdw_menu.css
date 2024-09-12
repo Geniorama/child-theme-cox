@@ -1,3 +1,7 @@
+.mdw__megamenu {
+  max-height: 100vh;
+}
+
 .mdw__megamenu_header {
   width: 28vw;
   display: flex;
