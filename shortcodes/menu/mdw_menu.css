@@ -1,9 +1,14 @@
+.mdw__megamenu {
+  max-height: 100vh;
+}
+
 .mdw__megamenu_header {
   width: 28vw;
   display: flex;
   justify-content: flex-end;
   padding: 20px;
   border-bottom: solid 1px #777;
+  background-color: white;
 }
 
 .mdw__menu_level {
