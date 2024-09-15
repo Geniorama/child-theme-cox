@@ -43,6 +43,11 @@
   width: calc(100% - 150px);
 }
 
+.mdw__content_header-icon img {
+  height: 44px;
+  object-fit: contain;
+}
+
 .mdw__content_header .mdw__content_header-title {
   width: 140px;
   font-size: 16px;
@@ -79,6 +84,10 @@
 
 .mdw__grid_card .mdw__header_icon {
   max-width: 63px;
+}
+
+.mdw__header_icon img {  
+  max-height: 39px;
 }
 
 .mdw__grid_card .mdw__header_title {
