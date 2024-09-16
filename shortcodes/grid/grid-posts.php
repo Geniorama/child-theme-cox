@@ -122,7 +122,7 @@ if(!function_exists('cox_grid_posts_func')){
 
                     .cox-post-item:first-child .cox-post-content{
                         width: 50%;
-                        background-color: turquoise;
+                        background-color: #2cb8c7;
                         position: absolute;
                         right: 0;
                         bottom: 0;

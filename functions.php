@@ -72,6 +72,6 @@ require 'shortcodes/grid/grid-projects.php';
 
 
 function custom_excerpt_length( $length ) {
-	return 200;
+	return 1200;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
