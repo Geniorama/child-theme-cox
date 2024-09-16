@@ -21,9 +21,13 @@ if(!function_exists('cox_grid_posts_func')){
         $icon_arrow_src = get_stylesheet_directory_uri() . '/inc/assets/img/flecha-arriba-azul.svg';
         ob_start();
         ?>
+            <!-- Styles grid posts -->
             <style>
                 .cox-grid-posts{
-                    display: 'flex';
+                    display: flex;
+                    flex-direction: column;
+                    overflow: hidden;
+                    gap: 30px;
                 }
 
                 .cox-post-arrow{
@@ -58,6 +62,11 @@ if(!function_exists('cox_grid_posts_func')){
                     color: black;
                     font-family: var( --e-global-typography-primary-font-family ), Sans-serif;
                     line-height: 1em;
+                    transition: .3s;
+                }
+
+                .cox-post-item:hover{
+                    opacity: .7;
                 }
 
                 .cox-post-date{
@@ -86,7 +95,12 @@ if(!function_exists('cox_grid_posts_func')){
                     .cox-grid-posts{
                         display: grid;
                         grid-template-columns: repeat(4, 1fr);
-                        height: 70vh;
+                        height: 700px;
+                        gap: 0px;
+                    }
+
+                    .cox-post-content{
+                        height: 50%;
                     }
 
                     .cox-post-thumbnail{

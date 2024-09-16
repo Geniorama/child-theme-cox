@@ -1,0 +1,35 @@
+.cox-project-info .type-title{
+    font-size: 12px;
+    line-height: 1em;
+    margin: 0px;
+    color: #43464f;
+    margin-bottom: 13px;
+    margin-top: 7px;
+}
+
+.cox-project-info .type-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #283198;
+    line-height: 1em;
+}
+
+.cox-project-info .capacity-number{
+    margin-right: 10px;
+    font-size: 48px;
+}
+
+.cox-project-info .capacity-sufix{
+    font-size: 30px
+}
+
+
+.cox-project-info .capacity span{
+    display: inline-block
+}
+
+.cox-project-info .capacity-icon{
+    width: 40px !important;
+    max-height: 40px;
+}
