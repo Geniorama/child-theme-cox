@@ -46,13 +46,19 @@ if(!function_exists('cox_grid_projects_func')){
 
                 .cox-grid-projects-thumbnail{
                     height: 200px;
+                    overflow: hidden;
                 }
 
                 .cox-grid-projects-thumbnail-img{
                     width: 100%;
                     height: 100% !important;
+                    transition: .5s;
                 }
 
+                .cox-grid-projects-item:hover .cox-grid-projects-thumbnail-img{
+                    transform: scale(1.1) rotate(-1deg);
+                }
+                
                 .cox-grid-projects-content{
                     background-color: #f2f2f2;
                     padding: 2em;
@@ -79,6 +85,7 @@ if(!function_exists('cox_grid_projects_func')){
                     font-size: 16px;
                     margin-top: 1em;
                 }
+                
 
                 @media screen and (min-width: 1200px){
                     .cox-grid-projects{

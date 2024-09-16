@@ -36,6 +36,7 @@ if(!function_exists('cox_grid_posts_func')){
 
                 .cox-post-thumbnail{
                     height: 230px;
+                    overflow: hidden;
                 }
 
                 .cox-post-content{
@@ -51,6 +52,7 @@ if(!function_exists('cox_grid_posts_func')){
                     width: 100%;
                     height: 100% !important;
                     object-fit: cover;
+                    transition: .5s;
                 }
 
                 .cox-post-item{
@@ -67,6 +69,10 @@ if(!function_exists('cox_grid_posts_func')){
 
                 .cox-post-item:hover{
                     opacity: .7;
+                }
+
+                .cox-post-item:hover .cox-post-thumbnail-img{
+                    transform: scale(1.1) rotate(-1deg);
                 }
 
                 .cox-post-date{
@@ -95,7 +101,7 @@ if(!function_exists('cox_grid_posts_func')){
                     .cox-grid-posts{
                         display: grid;
                         grid-template-columns: repeat(4, 1fr);
-                        height: 700px;
+                        height: auto;
                         gap: 0px;
                     }
 
