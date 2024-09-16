@@ -7,17 +7,11 @@ jQuery(document).ready(function($) {
       $('#mdw__megamenu ul > li').hover(
           function() {
               // Muestra el submenú de primer nivel (hijos inmediatos)
-              $(this).children('ul').stop(true, true).css({
-                'width': '28vw',
-                'left': '28vw',
-              }); // Ajusta el ancho según sea necesario
+              $(this).children('ul').stop(true, true).addClass('mdw__menu_level-2');
           },
           function() {
               // Oculta el submenú de primer nivel cuando se quita el hover
-              $(this).children('ul').stop(true, true).css({
-                'width': '0',
-                'left': '0',
-              });
+              $(this).children('ul').stop(true, true).removeClass('mdw__menu_level-2');
           }
       );
   
@@ -25,17 +19,11 @@ jQuery(document).ready(function($) {
       $('#mdw__megamenu li ul li').hover(
           function() {
               // Muestra el submenú de segundo nivel (hijos inmediatos)
-              $(this).children('ul').stop(true, true).css({
-                'width': '28vw',
-                'left': '28vw',
-              }); // Ajusta el ancho según sea necesario
+              $(this).children('ul').addClass('mdw__menu_level-3');
           },
           function() {
               // Oculta el submenú de segundo nivel cuando se quita el hover
-              $(this).children('ul').stop(true, true).css({
-                'width': '0',
-                'left': '-28vw',
-              });
+              $(this).children('ul').stop(true, true).removeClass('mdw__menu_level-3');
           }
       );
     });
