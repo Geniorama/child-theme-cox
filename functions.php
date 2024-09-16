@@ -64,7 +64,8 @@ require('inc/acf/acf-project-settings.php');
 require('inc/acf/acf-sustainable.php');
 
 // Shortcodes
-require('shortcodes/projects/sc-show-project-info.php');
-require('shortcodes/grid/grid-posts.php');
+require 'shortcodes/projects/sc-show-project-info.php';
+require 'shortcodes/grid/grid-posts.php';
 require 'shortcodes/menu/mdw_menu.php';
 require 'shortcodes/sustainable/mdw_sustainable.php';
+require 'shortcodes/grid/grid-projects.php';
