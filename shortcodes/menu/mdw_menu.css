@@ -1,5 +1,7 @@
 .mdw__megamenu {
   max-height: 100vh;
+  position: relative;
+  z-index: 2;
 }
 
 .mdw__megamenu_header {
@@ -17,6 +19,7 @@
   padding: 0;
   width: 28vw;
   height: 100vh;
+  z-index: -1;
 }
 
 .mdw__menu_level .mdw__menu_item {
@@ -33,10 +36,12 @@
   top: 0px;
   background-color: #EAEBF5;
   padding-top: 79.26px;
+  z-index: -1;
 }
 
 .mdw__menu_level > .mdw__menu_item > .mdw__menu_level > .mdw__menu_item > .mdw__menu_level {
   background-color: #283198;
+  left: -28vw;
 }
 
 .mdw__menu_level .mdw__menu_item a {
@@ -53,4 +58,13 @@
 
 .mdw__menu_level > .mdw__menu_item > .mdw__menu_level > .mdw__menu_item > .mdw__menu_level .mdw__menu_item a {
   color: #FFF;
+}
+
+/*Efecto hover*/
+#mdw__megamenu li ul {
+  position: absolute;
+  left: -28vw;
+  width: 0;
+  white-space: nowrap;
+  transition: width 0.3s ease;
 }
