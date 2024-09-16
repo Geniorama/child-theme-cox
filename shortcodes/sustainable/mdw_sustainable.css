@@ -75,6 +75,8 @@
   border: solid 1px white;
   text-align: center;
   padding: 4px;
+  cursor: pointer;
+  transition: all .3s ease-in;
 }
 
 .mdw__grid_card .mdw__header_number {
