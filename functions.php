@@ -48,4 +48,6 @@ require('inc/acf/acf-project-settings.php');
 // Shortcodes
 require('shortcodes/projects/sc-show-project-info.php');
 
-require 'shortcodes/menu/mdw_menu.php'; // Menu
+require 'shortcodes/menu/mdw_menu.php';
+
+require('shortcodes/grid/grid-posts.php');
