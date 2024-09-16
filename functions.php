@@ -33,6 +33,23 @@ function hello_elementor_child_scripts_styles()
 		],
 		HELLO_ELEMENTOR_CHILD_VERSION
 	);
+
+	wp_enqueue_style(
+		'mdw-style',
+		get_stylesheet_directory_uri() . '/inc/assets/css/style.css',
+		[
+			'hello-elementor-theme-style',
+		],
+		HELLO_ELEMENTOR_CHILD_VERSION
+	);
+
+	wp_enqueue_script(
+		'mdw-script',
+		get_stylesheet_directory_uri() . '/inc/assets/js/scripts.js',
+		array('jquery'),
+		null,
+		true
+	);
 }
 add_action('wp_enqueue_scripts', 'hello_elementor_child_scripts_styles', 20);
 
