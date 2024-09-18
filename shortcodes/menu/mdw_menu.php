@@ -43,8 +43,11 @@ function generate_menu_html($items, $parent_id = 0)
   $iconHaveChildren = "/wp-content/uploads/2024/09/a-bRecurso-3.svg";
 
   foreach ($items as $item) {
+    // Obtener las clases personalizadas del elemento del menú
+    $classes = !empty($item->classes) ? implode(' ', (array) $item->classes) : '';
+
     // Genera el elemento de menú
-    $output .= '<li class="mdw__menu_item"><a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a>';
+    $output .= '<li class="mdw__menu_item ' . esc_attr($classes) . '"><a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a>';
 
     // Si el elemento tiene hijos, llama recursivamente
     if (!empty($item->children)) {
@@ -58,6 +61,7 @@ function generate_menu_html($items, $parent_id = 0)
   $output .= '</ul>';
   return $output;
 }
+
 
 // Función para construir la jerarquía de menús
 function build_menu_hierarchy($menu_items, $parent_id = 0)

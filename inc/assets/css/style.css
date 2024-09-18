@@ -23,6 +23,11 @@
   color: var( --e-global-color-primary );
 }
 
+#mdw-main-header.bg-white .hfe-nav-menu > .menu-item > .sub-menu .sub-menu .hfe-sub-menu-item,
+#mdw-main-header.bg-white .hfe-search-icon-toggle i {
+  color: white;
+}
+
 #mdw-main-header.bg-white #mdw-main-burger-menu svg {
   fill: var( --e-global-color-primary );
 }
