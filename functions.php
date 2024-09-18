@@ -69,3 +69,9 @@ require 'shortcodes/grid/grid-posts.php';
 require 'shortcodes/menu/mdw_menu.php';
 require 'shortcodes/sustainable/mdw_sustainable.php';
 require 'shortcodes/grid/grid-projects.php';
+
+
+function custom_excerpt_length( $length ) {
+	return 1200;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
