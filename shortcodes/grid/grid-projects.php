@@ -5,7 +5,8 @@ if(!function_exists('cox_grid_projects_func')){
     function cox_grid_projects_func($atts){
         $atts = shortcode_atts( array(
             'post_type' => 'cox_projects',
-            'posts_per_page' => 5 
+            'posts_per_page' => 5,
+            'enableLinks' => false
         ), 
         $atts, 'cox_grid_posts' );
 
@@ -40,7 +41,7 @@ if(!function_exists('cox_grid_projects_func')){
                     transition: .3s;
                 }
 
-                .cox-grid-projects-item:hover{
+                .cox-grid-projects-link:hover{
                     opacity: .6;
                 }
 
@@ -55,7 +56,7 @@ if(!function_exists('cox_grid_projects_func')){
                     transition: .5s;
                 }
 
-                .cox-grid-projects-item:hover .cox-grid-projects-thumbnail-img{
+                .cox-grid-projects-link:hover .cox-grid-projects-thumbnail-img{
                     transform: scale(1.1) rotate(-1deg);
                 }
                 
@@ -123,28 +124,52 @@ if(!function_exists('cox_grid_projects_func')){
             </style>
             <div class="cox-grid-projects">
                 <?php while($query->have_posts()):$query->the_post() ?>
-                    <a href="<?php the_permalink(); ?>" class="cox-grid-projects-item">
-                        <div class="cox-grid-projects-thumbnail">
-                            <?php 
-                                if(has_post_thumbnail()) {
-                                    echo get_the_post_thumbnail( get_the_ID(), 'full', array('class' => 'cox-grid-projects-thumbnail-img'));
-                                } 
-                            ?>
-                        </div>
-
-                        <div class="cox-grid-projects-content">
-                            <div class="cox-grid-projects-content-heading">
-                                <h3 class="cox-grid-projects-title"><?php the_title(); ?></h3>
-                                <img src="<?php echo $icon_arrow_src; ?>" alt="" class="cox-grid-projects-arrow">
+                    <?php if($atts['enableLinks']): ?>
+                        <a href="<?php the_permalink(); ?>" class="cox-grid-projects-item cox-grid-projects-link">
+                            <div class="cox-grid-projects-thumbnail">
+                                <?php 
+                                    if(has_post_thumbnail()) {
+                                        echo get_the_post_thumbnail( get_the_ID(), 'full', array('class' => 'cox-grid-projects-thumbnail-img'));
+                                    } 
+                                ?>
                             </div>
 
-                            <?php echo do_shortcode('[show_project_info]'); ?>
+                            <div class="cox-grid-projects-content">
+                                <div class="cox-grid-projects-content-heading">
+                                    <h3 class="cox-grid-projects-title"><?php the_title(); ?></h3>
+                                    <img src="<?php echo $icon_arrow_src; ?>" alt="" class="cox-grid-projects-arrow">
+                                </div>
 
-                            <div class="cox-grid-projects-excerpt">
-                                <?php the_excerpt(); ?>
+                                <?php echo do_shortcode('[show_project_info]'); ?>
+
+                                <div class="cox-grid-projects-excerpt">
+                                    <?php the_excerpt(); ?>
+                                </div>
+                            </div>
+                        </a>
+                    <?php else: ?>
+                        <div class="cox-grid-projects-item">
+                            <div class="cox-grid-projects-thumbnail">
+                                <?php 
+                                    if(has_post_thumbnail()) {
+                                        echo get_the_post_thumbnail( get_the_ID(), 'full', array('class' => 'cox-grid-projects-thumbnail-img'));
+                                    } 
+                                ?>
+                            </div>
+
+                            <div class="cox-grid-projects-content">
+                                <div class="cox-grid-projects-content-heading">
+                                    <h3 class="cox-grid-projects-title"><?php the_title(); ?></h3>
+                                </div>
+
+                                <?php echo do_shortcode('[show_project_info]'); ?>
+
+                                <div class="cox-grid-projects-excerpt">
+                                    <?php the_excerpt(); ?>
+                                </div>
                             </div>
                         </div>
-                    </a>
+                    <?php endif; ?>
                 <?php endwhile; ?>
             </div>
         <?php
