@@ -28,7 +28,7 @@ function mostrar_menu_main_menu()
         <div class='mdw__megamenu_header'>
           <img src='$logoURL' alt='Logo' width='100' height='80' class='mdw__megamenu_logo'>
         </div>
-        $htmlmenu
+        $htmlmenu        
       </div>
     ";
     return $html;
@@ -57,8 +57,8 @@ function generate_menu_html($items, $parent_id = 0)
 
     $output .= '</li>';
   }
-
-  $output .= '</ul>';
+  $searchMobile = do_shortcode('[elementor-template id="1861"]');
+  $output .= "$searchMobile</ul>";
   return $output;
 }
 
