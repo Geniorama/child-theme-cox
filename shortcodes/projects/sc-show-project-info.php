@@ -17,7 +17,7 @@ if(!function_exists('show_project_info_func')){
 
         $type_project = get_field('type');
         $icon_water = $uri_images . 'drop.svg';
-        $icon_energy = $uri_images . "rayo-icon_1.svg";
+        $icon_energy = "/wp-content/uploads/2024/09/rayo-icon_1.svg";
 
         $output = "";
         if($type_project === "water"){
