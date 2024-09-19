@@ -10,9 +10,12 @@ if(!function_exists('cox_grid_projects_func')){
         ), 
         $atts, 'cox_grid_posts' );
 
+        $current_language = pll_current_language();
+
         $args = array(
             'post_type' => $atts['post_type'],
-            'posts_per_page' => $atts['posts_per_page']
+            'posts_per_page' => $atts['posts_per_page'],
+            'lang' => $current_language
         );
 
         $query = new WP_Query($args);
@@ -20,6 +23,7 @@ if(!function_exists('cox_grid_projects_func')){
         if($query->have_posts()):
         $icon_arrow_src = get_stylesheet_directory_uri() . '/inc/assets/img/flecha-arriba-azul.svg';
         ob_start();
+        $post_count = 0;
         ?>
             <!-- Styles grid projects -->
             <style>
@@ -48,6 +52,7 @@ if(!function_exists('cox_grid_projects_func')){
                 .cox-grid-projects-thumbnail{
                     height: 200px;
                     overflow: hidden;
+                    background: #F8F8F8;
                 }
 
                 .cox-grid-projects-thumbnail-img{
@@ -123,7 +128,7 @@ if(!function_exists('cox_grid_projects_func')){
                 }
             </style>
             <div class="cox-grid-projects">
-                <?php while($query->have_posts()):$query->the_post() ?>
+                <?php while($query->have_posts()):$query->the_post(); $post_count++; ?>
                     <?php if($atts['enableLinks']): ?>
                         <a href="<?php the_permalink(); ?>" class="cox-grid-projects-item cox-grid-projects-link">
                             <div class="cox-grid-projects-thumbnail">
@@ -165,7 +170,14 @@ if(!function_exists('cox_grid_projects_func')){
                                 <?php echo do_shortcode('[show_project_info]'); ?>
 
                                 <div class="cox-grid-projects-excerpt">
-                                    <?php the_excerpt(); ?>
+                                    <?php 
+                                        if($post_count > 1){
+                                            // Acortar el excerpt para los posts después del primero
+                                            echo wp_trim_words( get_the_excerpt(), 10, '...' ); 
+                                        } else {
+                                            the_excerpt();
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>

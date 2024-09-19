@@ -17,7 +17,7 @@
 
 .cox-project-info .capacity-number{
     margin-right: 10px;
-    font-size: 48px;
+    font-size: 40px;
 }
 
 .cox-project-info .capacity-sufix{
@@ -30,6 +30,6 @@
 }
 
 .cox-project-info .capacity-icon{
-    width: 40px !important;
-    max-height: 40px;
+    width: 30px !important;
+    max-height: 30px;
 }

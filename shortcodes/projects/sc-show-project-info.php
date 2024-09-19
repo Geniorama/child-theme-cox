@@ -29,7 +29,7 @@ if(!function_exists('show_project_info_func')){
             $output .= "<h3 class='type-title'>Capacity</h3>";
             $output .= "<div class='type-row'>";
             $output .= "<div class='capacity'>";
-            $output .= "<span class='capacity-number'>".number_format($capacity_number, 0)."</span>";
+            $output .= "<span class='capacity-number'>".$capacity_number."</span>";
             $output .= "<span class='capacity-sufix'>".$capacity_sufix."</span>";
             $output .= "</div>";
             $output .= "<div>";
@@ -48,7 +48,7 @@ if(!function_exists('show_project_info_func')){
             $output .= "<h3 class='type-title'>Installed Power</h3>";
             $output .= "<div class='type-row'>";
             $output .= "<div class='capacity'>";
-            $output .= "<span class='capacity-number'>".number_format($capacity_number, 0)."</span>";
+            $output .= "<span class='capacity-number'>".$capacity_number."</span>";
             $output .= "<span class='capacity-sufix'>".$capacity_sufix."</span>";
             $output .= "</div>";
             $output .= "<div>";
