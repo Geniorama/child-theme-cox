@@ -60,6 +60,10 @@
   color: #FFF;
 }
 
+.mdw__menu_level-2 > div {
+  display: none;
+}
+
 .mdw__menu_level .mdw__menu_item.mdw_contact {
   margin-top: 5rem;
   border-bottom: 0;
