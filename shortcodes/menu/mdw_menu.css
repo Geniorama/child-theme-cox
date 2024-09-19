@@ -60,6 +60,16 @@
   color: #FFF;
 }
 
+.mdw__menu_level .mdw__menu_item.mdw_contact {
+  margin-top: 5rem;
+  border-bottom: 0;
+  padding: 10px 20px;
+}
+
+.mdw__menu_level .mdw__menu_item.mdw_contact a {
+  font-size: 16px;
+}
+
 /*Efecto hover*/
 #mdw__megamenu li ul {
   position: absolute;
