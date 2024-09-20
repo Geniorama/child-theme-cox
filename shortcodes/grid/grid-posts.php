@@ -148,7 +148,6 @@ if(!function_exists('cox_grid_posts_func')){
                             <div class="cox-post-container-content">
                                 <span class="cox-post-date"><?php echo get_the_date(); ?></span>
                                 <h3 class="cox-post-title"><?php the_title(); ?></h3>
-                                <div class="cox-post-excerpt"><?php the_excerpt(); ?></div>
                             </div>
                             <div class="cox-post-container-arrow">
                                 <img src="<?php echo $icon_arrow_src ?>" alt="" class="cox-post-arrow">

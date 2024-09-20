@@ -59,6 +59,7 @@ if(!function_exists('cox_grid_projects_func')){
                     width: 100%;
                     height: 100% !important;
                     transition: .5s;
+                    object-fit: cover;
                 }
 
                 .cox-grid-projects-link:hover .cox-grid-projects-thumbnail-img{
@@ -114,11 +115,11 @@ if(!function_exists('cox_grid_projects_func')){
                     }
 
                     .cox-grid-projects-thumbnail{
-                        height: 60%;
+                        height: 50%;
                     }
 
                     .cox-grid-projects-content{
-                        height: 40%;
+                        height: 50%;
                     }
 
                     .cox-grid-projects-item:first-child .cox-grid-projects-thumbnail, .cox-grid-projects-item:first-child .cox-grid-projects-content{
@@ -172,8 +173,7 @@ if(!function_exists('cox_grid_projects_func')){
                                 <div class="cox-grid-projects-excerpt">
                                     <?php 
                                         if($post_count > 1){
-                                            // Acortar el excerpt para los posts después del primero
-                                            echo wp_trim_words( get_the_excerpt(), 10, '...' ); 
+                                            echo wp_trim_words( get_the_excerpt(), 20, '...' ); 
                                         } else {
                                             the_excerpt();
                                         }
