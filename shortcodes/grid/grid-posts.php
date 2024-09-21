@@ -117,7 +117,7 @@ if(!function_exists('cox_grid_posts_func')){
                     }
 
                     .cox-post-item:first-child .cox-post-thumbnail{
-                        height: 100%;
+                        height: 600px;
                     }
 
                     .cox-post-item:first-child .cox-post-content{
