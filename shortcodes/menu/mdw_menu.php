@@ -9,7 +9,7 @@ function mostrar_menu_main_menu()
   wp_enqueue_script('mdw-menu-script', get_stylesheet_directory_uri() . '/shortcodes/menu/mdw_menu.js', array('jquery'), null, true);
 
   // Obtiene el menú con el nombre 'main menu'
-  $menu_name = 'main menu';
+  $menu_name = pll_current_language('slug') == 'es' ? 'menu principal' : 'main menu';
   $menu = wp_get_nav_menu_object($menu_name);
 
   // Si el menú existe, genera la lista
@@ -57,7 +57,7 @@ function generate_menu_html($items, $parent_id = 0)
 
     $output .= '</li>';
   }
-  $searchMobile = do_shortcode('[elementor-template id="1861"]');
+  $searchMobile = pll_current_language('slug') == 'es' ? do_shortcode('[elementor-template id="3851"]') : do_shortcode('[elementor-template id="1861"]');
   $output .= "$searchMobile</ul>";
   return $output;
 }

@@ -45,7 +45,7 @@ function cox_projects_function() {
         'description'           => __( 'Post Type Description', 'web_cox' ),
         'labels'                => $labels,
         'supports'              => array( 'title', 'editor', 'thumbnail' ),
-        'taxonomies'            => array( 'post_tag' ),
+        'taxonomies'            => array( 'post_tag', 'tipo' ), // Añadimos la taxonomía 'tipo'
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
@@ -66,5 +66,36 @@ function cox_projects_function() {
 
 }
 add_action( 'init', 'cox_projects_function', 0 );
+
+// Register Custom Taxonomy "Tipo"
+function cox_tipo_taxonomy() {
+
+    $labels = array(
+        'name'              => _x( 'Tipos', 'taxonomy general name', 'web_cox' ),
+        'singular_name'     => _x( 'Tipo', 'taxonomy singular name', 'web_cox' ),
+        'search_items'      => __( 'Search Tipos', 'web_cox' ),
+        'all_items'         => __( 'All Tipos', 'web_cox' ),
+        'parent_item'       => __( 'Parent Tipo', 'web_cox' ),
+        'parent_item_colon' => __( 'Parent Tipo:', 'web_cox' ),
+        'edit_item'         => __( 'Edit Tipo', 'web_cox' ),
+        'update_item'       => __( 'Update Tipo', 'web_cox' ),
+        'add_new_item'      => __( 'Add New Tipo', 'web_cox' ),
+        'new_item_name'     => __( 'New Tipo Name', 'web_cox' ),
+        'menu_name'         => __( 'Tipo', 'web_cox' ),
+    );
+
+    $args = array(
+        'labels'            => $labels,
+        'hierarchical'      => true, // true si quieres que sea jerárquica como categorías
+        'public'            => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_nav_menus' => true,
+        'show_tagcloud'     => true,
+        'show_in_rest'      => true,
+    );
+    register_taxonomy( 'tipo', array( 'cox_projects' ), $args );
+}
+add_action( 'init', 'cox_tipo_taxonomy', 0 );
 
 }

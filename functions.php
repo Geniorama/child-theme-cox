@@ -75,3 +75,28 @@ function custom_excerpt_length( $length ) {
 	return 1200;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function acortar_breadcrumb_titulo($title, $breadcrumb) {
+    // Limitar el título a un máximo de 60 caracteres
+    if (strlen($title) > 60) {
+        $title = mb_substr($title, 0, 60) . '...';
+    }
+    return $title;
+}
+add_filter('bcn_breadcrumb_title', 'acortar_breadcrumb_titulo', 10, 2);
+
+// Función personalizada para limitar el extracto a 14 caracteres y agregar puntos suspensivos
+function limit_excerpt_with_dots($excerpt) {
+    $limit = 70; // Limitar a 70 caracteres
+
+    // Revisar si el extracto tiene más de 14 caracteres
+    if (strlen($excerpt) > $limit) {
+        // Cortar el extracto y agregar puntos suspensivos
+        $excerpt = substr($excerpt, 0, $limit) . '...';
+    }
+
+    return $excerpt;
+}
+
+// Filtrar el extracto en WordPress para aplicar la nueva función
+add_filter('the_excerpt', 'limit_excerpt_with_dots');

@@ -101,7 +101,7 @@ if(!function_exists('cox_grid_posts_func')){
                     .cox-grid-posts{
                         display: grid;
                         grid-template-columns: repeat(4, 1fr);
-                        height: auto;
+                        height: 600px;
                         gap: 0px;
                     }
 
@@ -117,7 +117,7 @@ if(!function_exists('cox_grid_posts_func')){
                     }
 
                     .cox-post-item:first-child .cox-post-thumbnail{
-                        height: 100%;
+                        height: 600px;
                     }
 
                     .cox-post-item:first-child .cox-post-content{
