@@ -1,19 +1,16 @@
 jQuery(document).ready(function($) {
   $(document).on('elementor/popup/show', function() {
-    // Oculta todos los submenús inicialmente
     $('#mdw__megamenu li ul').css('width', '0');
 
-    // Función para determinar si es móvil
     function isMobile() {
-      return window.matchMedia("(max-width: 768px)").matches; // Cambia el tamaño según tus necesidades
+        return window.matchMedia("(max-width: 768px)").matches;
     }
 
-    // Manejo de hover según el dispositivo
     function setupHoverHandlers() {
       if (isMobile()) {
-        // Al hacer clic sobre mdw__megamenu_logo en mobile
+        // Al hacer clic sobre el logo en mobile
         $('#mdw__megamenu li > .mdw__megamenu_logo').click(function(e) {
-          e.stopPropagation(); // Evitar que el clic se propague
+          e.stopPropagation();
           var $parentLi = $(this).closest('li');
           $parentLi.children('ul').stop(true, true).toggleClass('mdw__menu_level-2');
         });
@@ -23,6 +20,11 @@ jQuery(document).ready(function($) {
           if (!$(e.target).closest('#mdw__megamenu').length) {
             $('#mdw__megamenu li ul').removeClass('mdw__menu_level-2');
           }
+        });
+
+        // Manejo del botón "Volver" en mobile
+        $('#mdw__megamenu').on('click', '.mdw__megamenu_back', function() {
+          $(this).closest('ul').removeClass('mdw__menu_level-2');
         });
 
       } else {
@@ -48,12 +50,12 @@ jQuery(document).ready(function($) {
       }
     }
 
-    // Llamar a la función para configurar los handlers
     setupHoverHandlers();
 
     // Actualizar los handlers al redimensionar la ventana
     $(window).resize(function() {
-      setupHoverHandlers();
+        setupHoverHandlers();
     });
   });
-});  
+});
+

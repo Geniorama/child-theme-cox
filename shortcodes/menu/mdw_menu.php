@@ -37,26 +37,32 @@ function mostrar_menu_main_menu()
 add_shortcode('mostrar_menu', 'mostrar_menu_main_menu');
 
 // Función recursiva para generar el HTML del menú
-function generate_menu_html($items, $parent_id = 0)
+function generate_menu_html($items, $parent_id = 0, $level = 0)
 {
-  $output = '<ul class="mdw__menu_level">';
+  $output = '';
+  $output .= '<ul class="mdw__menu_level">';
+
+  // Agregar botón de volver solo en niveles 1 y 2
+  if ($level > 0) {
+    $backText = pll_current_language('slug') == 'es' ? 'Volver' : 'Back';
+    $output .= "<div class='mdw__megamenu_back'>$backText</div>";
+  }
+
+  // Definir el icono de tener hijos
   $iconHaveChildren = "/wp-content/uploads/2024/09/a-bRecurso-3.svg";
 
   foreach ($items as $item) {
-    // Obtener las clases personalizadas del elemento del menú
     $classes = !empty($item->classes) ? implode(' ', (array) $item->classes) : '';
-
-    // Genera el elemento de menú
     $output .= '<li class="mdw__menu_item ' . esc_attr($classes) . '"><a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a>';
 
-    // Si el elemento tiene hijos, llama recursivamente
     if (!empty($item->children)) {
-      $output .= generate_menu_html($item->children);
+      $output .= generate_menu_html($item->children, $item->ID, $level + 1); // Incrementa el nivel
       $output .= "<img src='$iconHaveChildren' alt='Logo' width='14' height='14' class='mdw__megamenu_logo'>";
     }
 
     $output .= '</li>';
   }
+
   $searchMobile = pll_current_language('slug') == 'es' ? do_shortcode('[elementor-template id="3851"]') : do_shortcode('[elementor-template id="1861"]');
   $output .= "$searchMobile</ul>";
   return $output;

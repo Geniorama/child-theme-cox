@@ -99,4 +99,24 @@
     left: 0;
     width: 100vw !important;
   }
+
+  .mdw__megamenu_back {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+  }
+
+  .mdw__menu_level-2 .mdw__megamenu_back {
+    color: #283198;
+  }
+  
+  .mdw__menu_level-2 .mdw__menu_level-2 .mdw__megamenu_back {
+    color: #FFF;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mdw__megamenu_back {
+    display: none;
+  }
 }
