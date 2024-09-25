@@ -87,7 +87,7 @@ add_filter('bcn_breadcrumb_title', 'acortar_breadcrumb_titulo', 10, 2);
 
 // Función personalizada para limitar el extracto a 14 caracteres y agregar puntos suspensivos
 function limit_excerpt_with_dots($excerpt) {
-    $limit = 70; // Limitar a 70 caracteres
+    $limit = 100;
 
     // Revisar si el extracto tiene más de 14 caracteres
     if (strlen($excerpt) > $limit) {
