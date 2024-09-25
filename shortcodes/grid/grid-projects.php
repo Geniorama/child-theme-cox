@@ -24,6 +24,7 @@ if(!function_exists('cox_grid_projects_func')){
         $icon_arrow_src = get_stylesheet_directory_uri() . '/inc/assets/img/flecha-arriba-azul.svg';
         ob_start();
         $post_count = 0;
+        remove_filter('the_excerpt', 'limit_excerpt_with_dots');
         ?>
             <!-- Styles grid projects -->
             <style>
@@ -172,11 +173,7 @@ if(!function_exists('cox_grid_projects_func')){
 
                                 <div class="cox-grid-projects-excerpt">
                                     <?php 
-                                        if($post_count > 1){
-                                            echo wp_trim_words( get_the_excerpt(), 20, '...' ); 
-                                        } else {
-                                            the_excerpt();
-                                        }
+                                       the_excerpt();
                                     ?>
                                 </div>
                             </div>
