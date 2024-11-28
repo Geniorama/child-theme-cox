@@ -71,32 +71,61 @@ require 'shortcodes/sustainable/mdw_sustainable.php';
 require 'shortcodes/grid/grid-projects.php';
 
 
-function custom_excerpt_length( $length ) {
+function custom_excerpt_length($length)
+{
 	return 1200;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter('excerpt_length', 'custom_excerpt_length', 999);
 
-function acortar_breadcrumb_titulo($title, $breadcrumb) {
-    // Limitar el título a un máximo de 60 caracteres
-    if (strlen($title) > 60) {
-        $title = mb_substr($title, 0, 60) . '...';
-    }
-    return $title;
+function acortar_breadcrumb_titulo($title, $breadcrumb)
+{
+	// Limitar el título a un máximo de 60 caracteres
+	if (strlen($title) > 60) {
+		$title = mb_substr($title, 0, 60) . '...';
+	}
+	return $title;
 }
 add_filter('bcn_breadcrumb_title', 'acortar_breadcrumb_titulo', 10, 2);
 
 // Función personalizada para limitar el extracto a 14 caracteres y agregar puntos suspensivos
-function limit_excerpt_with_dots($excerpt) {
-    $limit = 100;
+function limit_excerpt_with_dots($excerpt)
+{
+	$limit = 100;
 
-    // Revisar si el extracto tiene más de 14 caracteres
-    if (strlen($excerpt) > $limit) {
-        // Cortar el extracto y agregar puntos suspensivos
-        $excerpt = substr($excerpt, 0, $limit) . '...';
-    }
+	// Revisar si el extracto tiene más de 14 caracteres
+	if (strlen($excerpt) > $limit) {
+		// Cortar el extracto y agregar puntos suspensivos
+		$excerpt = substr($excerpt, 0, $limit) . '...';
+	}
 
-    return $excerpt;
+	return $excerpt;
 }
 
 // Filtrar el extracto en WordPress para aplicar la nueva función
 add_filter('the_excerpt', 'limit_excerpt_with_dots');
+
+
+
+function generate_iframe_auth()
+{
+	$username = "company";
+	$password = "euroland";
+	$encoded_credentials = base64_encode("$username:$password");
+	$iframe_url = "https://tools.euroland.com/tools/ticker/html/?companycode=es-cox&v=scrolling&lang=en-GB";
+
+	return '<iframe style="max-height:55px;" src="' . $iframe_url . '"></iframe>';
+}
+
+add_shortcode('iframe_ticker', 'generate_iframe_auth');
+
+function generate_iframe_authdos()
+{
+	$username = "company";
+	$password = "euroland";
+	$encoded_credentials = base64_encode("$username:$password");
+	$iframe_url = "https://tools.euroland.com/tools/ticker/html/?companycode=es-cox&v=scrolling&lang=es-ES";
+
+	return '<iframe style="max-height:55px;" src="' . $iframe_url . '"></iframe>';
+}
+
+add_shortcode('iframe_tickerdos', 'generate_iframe_authdos');
