@@ -16,3 +16,9 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 #mdw-main-menu .hfe-nav-menu > .menu-item a {
   padding-right: 15px !important;
 }
+
+@media screen and (min-width: 1025px) {
+  .hfe-nav-menu .onlyMobileAndSideMenu {
+    display: none;
+  }
+}
