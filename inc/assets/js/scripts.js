@@ -35,3 +35,28 @@ jQuery(document).ready(function($) {
       lastScrollTop = currentScrollTop;
   });
 });
+
+
+jQuery(document).ready(function($) {
+  $('.hfe-menu-item, .hfe-sub-menu-item').each(function() {
+    // Obtén el elemento <a> y el <span> asociado
+    var $a = $(this);
+    var $span = $a.find('.hfe-menu-toggle');
+
+    // Mueve el <span> fuera del <a> y lo coloca como hermano del <a>
+    if ($span.length) {
+      $span.insertAfter($a);
+    }
+  });
+  
+  $('.sub-arrow').each(function() {
+    $(this).on('click', function() {
+      var elementoPadre = $(this).parent().parent();
+      elementoPadre.addClass('clic');
+      elementoPadre.find('> .sub-menu').addClass('mdw__visible');
+      $('.sub-menu').on('mouseleave', function() {
+        $(this).removeClass('mdw__visible');
+      });
+    });
+  });
+});

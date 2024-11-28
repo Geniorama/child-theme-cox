@@ -19,12 +19,16 @@
 }
 
 #mdw-main-header.bg-white a,
+#mdw-main-header.bg-white .hfe-menu-toggle i,
+#mdw-main-header.mdw-secundary-header .hfe-menu-toggle i,
+#mdw-main-header .hfe-nav-menu > .menu-item > .sub-menu .hfe-menu-toggle i,
 #mdw-main-header.bg-white .hfe-search-icon-toggle i {
   color: var( --e-global-color-primary );
 }
 
 #mdw-main-header.bg-white .hfe-nav-menu > .menu-item > .sub-menu .sub-menu .hfe-sub-menu-item,
-#mdw-main-header.bg-white .hfe-search-icon-toggle i {
+#mdw-main-header.bg-white .hfe-search-icon-toggle i,
+.hfe-menu-toggle i {
   color: white;
 }
 
