@@ -105,14 +105,34 @@
     position: absolute;
     left: 1rem;
     top: 2rem;
+    display: flex;
+    gap: 5px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 20px;
+      aspect-ratio: 1;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 
   .mdw__menu_level-2 .mdw__megamenu_back {
     color: #283198;
+
+    &::before {
+      background-image: url('/wp-content/uploads/2024/11/arrow-left-solid-blue.svg');
+    }
   }
   
   .mdw__menu_level-2 .mdw__menu_level-2 .mdw__megamenu_back {
     color: #FFF;
+
+    &::before {
+      background-image: url('/wp-content/uploads/2024/11/arrow-left-solid-white.svg');
+    }
   }
 }
 
