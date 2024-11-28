@@ -92,6 +92,7 @@
 
   .mdw__megamenu_header {
     width: 100vw;
+    justify-content: flex-start;
   }
 
   #mdw__megamenu .mdw__menu_level-2 {
@@ -102,7 +103,7 @@
 
   .mdw__megamenu_back {
     position: absolute;
-    right: 2rem;
+    left: 1rem;
     top: 2rem;
   }
 
