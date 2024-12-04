@@ -13,23 +13,3 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 */
 
 /* Add your custom styles here */
-@media screen and (min-width: 1025px) {
-  .hfe-nav-menu .onlyMobileAndSideMenu {
-    display: none;
-  }
-
-  .hfe-nav-menu__layout-horizontal .hfe-nav-menu .menu-item-has-children:hover > .sub-menu, .hfe-nav-menu__layout-horizontal .hfe-nav-menu .menu-item-has-children.focus > .sub-menu {
-    visibility: hidden;
-    opacity: 0;
-  }
-  
-  .hfe-nav-menu__layout-horizontal .hfe-nav-menu .menu-item-has-children > .sub-menu.mdw__visible, .hfe-nav-menu__layout-horizontal .hfe-nav-menu .menu-item-has-children.focus > .sub-menu.mdw__visible {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .hfe-has-submenu-container {
-    display: flex;
-    align-items: center;
-  }
-}
