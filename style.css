@@ -23,7 +23,7 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
     opacity: 0;
   }
   
-  .hfe-nav-menu__layout-horizontal .hfe-nav-menu .menu-item-has-children:hover > .sub-menu.mdw__visible, .hfe-nav-menu__layout-horizontal .hfe-nav-menu .menu-item-has-children.focus > .sub-menu.mdw__visible {
+  .hfe-nav-menu__layout-horizontal .hfe-nav-menu .menu-item-has-children > .sub-menu.mdw__visible, .hfe-nav-menu__layout-horizontal .hfe-nav-menu .menu-item-has-children.focus > .sub-menu.mdw__visible {
     visibility: visible;
     opacity: 1;
   }

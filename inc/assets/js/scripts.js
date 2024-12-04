@@ -52,11 +52,9 @@ jQuery(document).ready(function($) {
   $('.sub-arrow').each(function() {
     $(this).on('click', function() {
       var elementoPadre = $(this).parent().parent();
-      elementoPadre.addClass('clic');
-      elementoPadre.find('> .sub-menu').addClass('mdw__visible');
-      $('.sub-menu').on('mouseleave', function() {
-        $(this).removeClass('mdw__visible');
-      });
+      // Selecciona todos los hermanos de 'elementoPadre' y quita la clase de sus sub-menús
+      elementoPadre.siblings('.menu-item').find('.sub-menu').removeClass('mdw__visible');
+      elementoPadre.find('> .sub-menu').toggleClass('mdw__visible');
     });
   });
 });
