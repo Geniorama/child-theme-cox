@@ -65,9 +65,7 @@ function generate_menu_html($items, $parent_id = 0, $level = 0)
 
   if ($level === 0) {
     $searchMobile = pll_current_language('slug') == 'es' ? do_shortcode('[elementor-template id="3851"]') : do_shortcode('[elementor-template id="1861"]');
-    // $output .= '<li class="mdw__menu_item">';
     $output .= "$searchMobile";
-    // $output .= '</li>';
   }
   $output .= "</ul>";
   return $output;
