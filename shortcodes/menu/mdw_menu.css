@@ -12,6 +12,8 @@
   padding: 20px;
   border-bottom: solid 1px #777;
   background-color: white;
+  position: sticky;
+  top: 0;
 }
 
 .mdw__menu_level {
