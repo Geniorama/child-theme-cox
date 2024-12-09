@@ -2,6 +2,7 @@
   max-height: 100vh;
   position: relative;
   z-index: 2;
+  overflow-y: auto;
 }
 
 .mdw__megamenu_header {
@@ -18,8 +19,8 @@
   background-color: #fff;
   padding: 0;
   width: 28vw;
-  height: 100vh;
-  z-index: -1;
+  height: max-content;
+  min-height: calc(100vh - 80px);
 }
 
 .mdw__menu_level .mdw__menu_item {
@@ -61,7 +62,7 @@
 }
 
 .mdw__menu_level .mdw__menu_item.mdw_contact {
-  margin-top: 5rem;
+  margin-top: 3rem;
   border-bottom: 0;
   padding: 10px 20px;
 }
